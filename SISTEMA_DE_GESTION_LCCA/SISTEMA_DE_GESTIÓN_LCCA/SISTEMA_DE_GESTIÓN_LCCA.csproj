@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C585CC71-70CB-4202-86CA-9498A3054AF9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SISTEMA_DE_GESTIÓN_LCCA</RootNamespace>
+    <AssemblyName>SISTEMA_DE_GESTIÓN_LCCA</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>C:\Users\LINEA COMUNICACIONES\OneDrive - Linea Comunicaciones SAS\Escritorio\LCCA26032022\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>58</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A55D023F3ADEB0BA628A3C141DA4E8DAB7016D6E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SISTEMA_DE_GESTIÓN_LCCA_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Logo-Linea-ComunicacionesV2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Windows.Design.Extensibility, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit">
+      <HintPath>..\..\..\..\Downloads\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ADMINISTRATIVO\Cuentascobro.xaml.cs">
+      <DependentUpon>Cuentascobro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\Dotacion.xaml.cs">
+      <DependentUpon>Dotacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\Formacion.xaml.cs">
+      <DependentUpon>Formacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\Menuingresos.xaml.cs">
+      <DependentUpon>Menuingresos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\Operacion.xaml.cs">
+      <DependentUpon>Operacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\Personal.xaml.cs">
+      <DependentUpon>Personal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\SST.xaml.cs">
+      <DependentUpon>SST.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINISTRATIVO\upempleados.xaml.cs">
+      <DependentUpon>upempleados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\Agenda.xaml.cs">
+      <DependentUpon>Agenda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\Class.cs" />
+    <Compile Include="CALIDAD\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CALIDAD\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\LlamadasSevicio.xaml.cs">
+      <DependentUpon>LlamadasSevicio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\Metasoperación.xaml.cs">
+      <DependentUpon>Metasoperación.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\Operación.xaml.cs">
+      <DependentUpon>Operación.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\Reagendamiento.xaml.cs">
+      <DependentUpon>Reagendamiento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CALIDAD\Selectfileexcelencia.xaml.cs">
+      <DependentUpon>Selectfileexcelencia.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ADMINISTRATIVO\Cuentascobro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ADMINISTRATIVO\Dotacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ADMINISTRATIVO\Formacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ADMINISTRATIVO\Menuingresos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ADMINISTRATIVO\Operacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ADMINISTRATIVO\Personal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ADMINISTRATIVO\SST.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ADMINISTRATIVO\upempleados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CALIDAD\Agenda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CALIDAD\Calidad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CALIDAD\LlamadasSevicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CALIDAD\Reagendamiento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Consecutivo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Consecutivoasis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Logistica.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LOGISTICA\BancoPruebas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LOGISTICA\BodegaCpes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LOGISTICA\BodegaTec.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LOGISTICA\CambiosConsuDig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LOGISTICA\Cargacpes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LOGISTICA\Consumomasivocpes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LOGISTICA\Consumos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LOGISTICA\ConsumosDigi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LOGISTICA\IngresoMaterial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LOGISTICA\Inversa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LOGISTICA\Movimientosterreno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LOGISTICA\Newcodigo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LOGISTICA\Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CALIDAD\Calidad.xaml.cs">
+      <DependentUpon>Calidad.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Clase.cs" />
+    <Compile Include="Consecutivo.xaml.cs">
+      <DependentUpon>Consecutivo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Consecutivoasis.xaml.cs">
+      <DependentUpon>Consecutivoasis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Conversores.cs" />
+    <Compile Include="Logistica.xaml.cs">
+      <DependentUpon>Logistica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\BancoPruebas.xaml.cs">
+      <DependentUpon>BancoPruebas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\BodegaCpes.xaml.cs">
+      <DependentUpon>BodegaCpes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\BodegaTec.xaml.cs">
+      <DependentUpon>BodegaTec.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\CambiosConsuDig.xaml.cs">
+      <DependentUpon>CambiosConsuDig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\Cargacpes.xaml.cs">
+      <DependentUpon>Cargacpes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\Consumomasivocpes.xaml.cs">
+      <DependentUpon>Consumomasivocpes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\Consumos.xaml.cs">
+      <DependentUpon>Consumos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\ConsumosDigi.xaml.cs">
+      <DependentUpon>ConsumosDigi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\IngresoMaterial.xaml.cs">
+      <DependentUpon>IngresoMaterial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\Inversa.xaml.cs">
+      <DependentUpon>Inversa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\Movimientosterreno.xaml.cs">
+      <DependentUpon>Movimientosterreno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\Newcodigo.xaml.cs">
+      <DependentUpon>Newcodigo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LOGISTICA\Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="CALIDAD\Metasoperación.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CALIDAD\Operación.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CALIDAD\Selectfileexcelencia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="CALIDAD\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SISTEMA_DE_GESTIÓN_LCCA_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\background_log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\Logistica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\Calidad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\Administrativo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\icontec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\foot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\copa2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\copa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\copa3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\icondatacarga.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\iconexcelon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\iconhome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\excelencia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\Iconmetas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\iconsalir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="iconhome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="iconinsta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="iconmto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="iconpos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="iconvtec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="iconmeta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Logo-Linea-ComunicacionesV2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="iconcall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CALIDAD\iconsearch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CALIDAD\iconcalendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CALIDAD\iconcall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ADMINISTRATIVO\icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ADMINISTRATIVO\iconid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ADMINISTRATIVO\iconcargo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ADMINISTRATIVO\iconubi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ADMINISTRATIVO\iconsuper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ADMINISTRATIVO\iconemail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ADMINISTRATIVO\formacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ADMINISTRATIVO\entrega.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ADMINISTRATIVO\inop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ADMINISTRATIVO\colab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ADMINISTRATIVO\alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LOGISTICA\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LOGISTICA\iconexcel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LOGISTICA\iconid+.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LOGISTICA\iconhistorico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LOGISTICA\iconinversa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ADMINISTRATIVO\iconcobromoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\iconcpes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\btnbodegatec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\btnbodecpe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\icogarantias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\btnbancopru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\btnbodeconsumos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="iconingmate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\iconingmate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\iconcontrol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml">
+      <Version>2.7.2</Version>
+    </PackageReference>
+    <PackageReference Include="DotNetProjects.WpfToolkit.DataVisualization">
+      <Version>6.1.91</Version>
+    </PackageReference>
+    <PackageReference Include="ExcelDataReader.DataSet">
+      <Version>3.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="ExcelNumberFormat">
+      <Version>1.0.10</Version>
+    </PackageReference>
+    <PackageReference Include="iTextSharp">
+      <Version>5.5.13.2</Version>
+    </PackageReference>
+    <PackageReference Include="LiveCharts.Wpf">
+      <Version>0.9.7</Version>
+    </PackageReference>
+    <PackageReference Include="MahApps.Metro">
+      <Version>2.4.9</Version>
+    </PackageReference>
+    <PackageReference Include="MaterialDesignThemes">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CSharp">
+      <Version>4.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies">
+      <Version>1.0.0</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Office.Interop.Excel">
+      <Version>15.0.4795.1000</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications">
+      <Version>7.1.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.UI.Xaml">
+      <Version>2.7.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts">
+      <Version>10.0.19041.1</Version>
+    </PackageReference>
+    <PackageReference Include="SendGrid">
+      <Version>9.25.1</Version>
+    </PackageReference>
+    <PackageReference Include="SharpDX.DXGI">
+      <Version>4.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="ShowMeTheXAML.MSBuild">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="SwiftExcel">
+      <Version>1.0.11</Version>
+    </PackageReference>
+    <PackageReference Include="System.Composition.Runtime">
+      <Version>6.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Data.SqlClient">
+      <Version>4.8.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>5.0.0.2291</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\iconadmin.png" />
+    <Resource Include="RecursosIMG\iconclaro.png" />
+    <Resource Include="RecursosIMG\iconconseadmin.png" />
+    <Resource Include="RecursosIMG\iconconseproyec.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\btnacepconsumo.png" />
+    <Resource Include="RecursosIMG\btndiviciones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RecursosIMG\btnrechazar.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

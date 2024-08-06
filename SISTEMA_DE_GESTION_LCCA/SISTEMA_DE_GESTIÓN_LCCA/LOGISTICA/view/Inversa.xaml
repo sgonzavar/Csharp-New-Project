@@ -1,0 +1,47 @@
+﻿<Window x:Class="SISTEMA_DE_GESTIÓN_LCCA.LOGISTICA.Inversa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SISTEMA_DE_GESTIÓN_LCCA.LOGISTICA"
+        mc:Ignorable="d"
+        Title="LCCA - BODEGA INVERSA" Height="302" Width="478.5" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="Manual" TabIndex="0" WindowState="Normal">
+    <Canvas Margin="0,0,573,0">
+        <DockPanel x:Name="header" LastChildFill="False" Background="#FF033D38" Height="70" Width="478">
+            <Canvas Width="476">
+                <Button x:Name="btnloanddata" Cursor="Hand" BorderBrush="{x:Null}" Width="94" Height="66" Canvas.Left="382" Click="btnloanddata_Click" Canvas.Top="4">
+                    <Button.Background>
+                        <ImageBrush x:Name="imgbtnlda" ImageSource="/RecursosIMG/iconsalir.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+                <Label Content="LCCA - BODEGA INVERSA" Canvas.Left="1" Foreground="White" Height="66" Width="164" HorizontalContentAlignment="Right" FontWeight="Bold" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Canvas>
+        </DockPanel>
+        <ComboBox IsTextSearchEnabled="True" IsEditable="True" IsTextSearchCaseSensitive="True" x:Name="cbxdescripcion" Canvas.Left="137" Canvas.Top="99" Width="311" SelectionChanged="ComboBox_SelectionChanged"/>
+        <TextBox x:Name="txtcodigo" Height="23" Canvas.Left="137" TextWrapping="Wrap" Canvas.Top="136" Width="159" RenderTransformOrigin="0.5,0.5" IsEnabled="False">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.111"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label Content="DESCRIPCIÓN" Canvas.Left="44" Canvas.Top="95" FontWeight="Bold"/>
+        <Label Content="CÓDIGO" Canvas.Left="44" Canvas.Top="135" FontWeight="Bold"/>
+        <TextBox x:Name="txtserial" Height="23" Canvas.Left="137" TextWrapping="Wrap" Canvas.Top="177" Width="159" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.111"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label x:Name="SERIAL_" Content="SERIAL:" Canvas.Left="44" Canvas.Top="176" FontWeight="Bold"/>
+        <Button IsDefault="True" x:Name="btningresar" Content="INGRESAR SERIAL" Background="#FF033D38" BorderBrush="{x:Null}" FontWeight="Bold" Foreground="White" FontSize="16" Cursor="Hand" Click="btnbuscar_Click" Height="33" Width="204" Canvas.Top="223" Canvas.Left="137"/>
+
+    </Canvas>
+</Window>

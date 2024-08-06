@@ -1,0 +1,79 @@
+﻿<Window x:Class="SISTEMA_DE_GESTIÓN_LCCA.Logistica"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SISTEMA_DE_GESTIÓN_LCCA"
+        mc:Ignorable="d" Title="INGRESOS"
+           WindowStyle="None" FontSize="18"  WindowStartupLocation="CenterScreen" RenderTransformOrigin="0.5,0.5" ResizeMode="NoResize" Width="817" Height="182">
+    <Canvas Margin="0,0,0,-11">
+        <Label x:Name="lbwlcome" Content="SELECCIONE MODULO" Width="819" Height="54" Foreground="White" FontSize="22" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FF033C36"/>
+        <DockPanel LastChildFill="False" Height="129" Canvas.Top="54" Width="819" Background="#FF0D5953"/>
+        <Grid Height="139" Width="828" Canvas.Top="44">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="82*"/>
+                <ColumnDefinition Width="73*"/>
+                <ColumnDefinition Width="9*"/>
+                <ColumnDefinition Width="82*"/>
+                <ColumnDefinition Width="82*"/>
+                <ColumnDefinition Width="82*"/>
+                <ColumnDefinition Width="82*"/>
+            </Grid.ColumnDefinitions>
+            <Button Click="btnexcelenciamod_Click"  x:Name="btnexcelenciamod" Margin="8,13,12,7" Cursor="Hand" BorderBrush="{x:Null}" Grid.ColumnSpan="2" Grid.Column="1">
+                <Button.Background>
+                    <ImageBrush ImageSource="/RecursosIMG/btnbodegatec.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button Click="btnmetasmod_Click" x:Name="btnmetasmod" Margin="8,13,12,7" Grid.Column="3" Cursor="Hand" BorderBrush="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/RecursosIMG/btnbodeconsumos.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button Click="btncall_Click"  x:Name="btncall" Margin="8,13,12,7" Grid.Column="4" Cursor="Hand" BorderBrush="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/RecursosIMG/btnbodecpe.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+
+            <Button Click="btn_Click"  x:Name="btn" Margin="8,13,12,7" Grid.Column="5" Cursor="Hand" BorderBrush="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/RecursosIMG/btnbancopru.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button Click="btnexcelenciamod_Copy_Click"  x:Name="btnexcelenciamod_Copy" Margin="8,13,12,7" Cursor="Hand" BorderBrush="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/RecursosIMG/iconingmate.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Button Click="btn_Copy_Click"  x:Name="btn_Copy" Margin="8,13,12,7" Grid.Column="6" Cursor="Hand" BorderBrush="{x:Null}">
+                <Button.Background>
+                    <ImageBrush ImageSource="/RecursosIMG/iconcontrol.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+
+
+        </Grid>
+        <Button Click="Button_Click_1" Height="52" Canvas.Left="747" Width="62" BorderBrush="{x:Null}" Cursor="Hand" Canvas.Top="2">
+            <Button.Background>
+                <ImageBrush ImageSource="/RecursosIMG/iconsalir.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Button Click="Button_Click" Height="52" Canvas.Left="10" Width="62" BorderBrush="{x:Null}" Cursor="Hand" Canvas.Top="1">
+            <Button.Background>
+                <ImageBrush ImageSource="/RecursosIMG/icondatacarga.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <ListBox x:Name="lsseriales" Height="3" Width="0" RenderTransformOrigin="0.5,0.5" Canvas.Top="-3">
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+        </ListBox>
+
+    </Canvas>
+</Window>
+

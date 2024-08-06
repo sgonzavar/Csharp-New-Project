@@ -1,0 +1,18 @@
+﻿<Window x:Name="Mes" x:Class="SISTEMA_DE_GESTIÓN_LCCA.Selectfileexcelencia"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SISTEMA_DE_GESTIÓN_LCCA"
+        mc:Ignorable="d"
+        Title="Descargar excelencia mes" Height="266" Width="320">
+    <Canvas>
+        <Button Click="btndownloandexc_Click" x:Name="btndownloandexc" Content="DESCARGAR MES" Background="#FF033D38" BorderBrush="{x:Null}" FontWeight="Bold" Foreground="White" FontSize="16" Cursor="Hand" Height="45" Canvas.Left="68" Canvas.Top="146" Width="183"/>
+        <ComboBox SelectionChanged="cbxmes_SelectionChanged" x:Name="cbxmes" Height="30" Panel.ZIndex="1" Width="289" Canvas.Left="15" Canvas.Top="82"/>
+        <Label Content="Seleccione hoja" FontSize="18" Foreground="#FF222222" Height="38" FontWeight="Bold" Canvas.Left="89" Canvas.Top="28" Background="{x:Null}"/>
+
+        <ScrollViewer Canvas.Top="205">
+            <DataGrid x:Name="dgv" Height="auto" Width="auto"/>
+        </ScrollViewer>
+    </Canvas>
+</Window>

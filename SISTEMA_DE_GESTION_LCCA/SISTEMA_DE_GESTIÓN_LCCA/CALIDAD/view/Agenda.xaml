@@ -1,0 +1,121 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SISTEMA_DE_GESTIÓN_LCCA.CALIDAD"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="SISTEMA_DE_GESTIÓN_LCCA.CALIDAD.Agenda"
+        mc:Ignorable="d"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"        
+    
+    Title="Agenda" Height="722" Width="1080" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="Manual" TabIndex="0" WindowState="Normal">
+    <Canvas Margin="0,0,0,10">
+        <Canvas x:Name="agenda" Height="706" Width="1080">
+            <Canvas Width="255" Height="659" Canvas.Top="61" Background="#FF035952">
+                <Label Content="Buscar por:" Width="133" Canvas.Left="8" Canvas.Top="39" FontWeight="Bold" Foreground="White" FontSize="18"/>
+                <Canvas x:Name="cvestado" Height="534" Width="255" Canvas.Top="111">
+                    <ComboBox x:Name="cbxestado" Width="235" Canvas.Left="10" Canvas.Top="63" FontSize="18">
+                        <ComboBoxItem Content="AGENDADO"/>
+                        <ComboBoxItem Content="INICIADO"/>
+                        <ComboBoxItem Content="CERRADO"/>
+                    </ComboBox>
+                    <Button Content="BUSCAR" Width="163" Canvas.Left="46" Canvas.Top="117" Background="#FF033D38" Foreground="White" BorderBrush="{x:Null}" Height="39" FontWeight="Bold" Click="Button_Click" FontSize="18"/>
+                    <Label Content="Estado" FontWeight="Bold" Foreground="White" Width="100" Canvas.Left="10" Canvas.Top="21" FontSize="18"/>
+                </Canvas>
+                <Canvas x:Name="cvfiltro" Height="539" Width="255" Canvas.Top="106" d:IsHidden="True">
+                    <Button Content="BUSCAR" Width="163" Canvas.Left="47" Canvas.Top="240" Background="#FF033D38" Foreground="White" BorderBrush="{x:Null}" Height="38" FontWeight="Bold" Click="Button_Click_1" FontSize="14"/>
+                    <Label Content="Buscar por:" FontWeight="Bold" Foreground="White" Width="100" Canvas.Left="10" Canvas.Top="21" FontSize="14"/>
+                    <RadioButton x:Name="rborden" Content="ID ORDEN" Canvas.Left="11" Canvas.Top="64" Foreground="White" Checked="rborden_Checked" FontSize="14"/>
+                    <RadioButton x:Name="rbcuenta" Content="ID CUENTA" Canvas.Left="135" Canvas.Top="64" Foreground="White" Checked="rbcuenta_Checked" FontSize="14"/>
+                    <TextBox x:Name="txtfiltro" Canvas.Left="9" Canvas.Top="200" TextWrapping="Wrap" Width="237" FontSize="14"/>
+                    <Label Content="Item de busqueda:" FontWeight="Bold" Foreground="White" Width="187" Canvas.Left="11" Canvas.Top="162" FontSize="14"/>
+                    <RadioButton x:Name="rbidvisita" Content="ID VISITA" Canvas.Left="135" Canvas.Top="92" Foreground="White" Checked="rbidvisita_Checked" FontSize="14"/>
+                    <RadioButton x:Name="rbidllamada" Content="ID LLAMADA" Canvas.Left="11" Canvas.Top="92" Foreground="White" Checked="rbidllamada_Checked" FontSize="14"/>
+                    <RadioButton x:Name="rbfecha" Content="FECHA EVENTO PRINCIPAL" Canvas.Left="11" Canvas.Top="121" Foreground="White" Checked="rbfecha_Checked" FontSize="14"/>
+                    <RadioButton x:Name="rbcerradoshoy" Content="CERRADOS POR FECHA" Canvas.Left="11" Canvas.Top="148" Foreground="White" Checked="rbfecha_Checked" FontSize="14"/>
+                </Canvas>
+                <Label x:Name="lbidorden" Content="" Canvas.Left="13" Canvas.Top="562" Foreground="White" Width="232" d:IsHidden="True"/>
+                <RadioButton x:Name="rbsearchagenda" Content="AGENDA" Canvas.Left="15" Canvas.Top="89" Foreground="White" Checked="rbsearchagenda_Checked" FontSize="18"/>
+                <RadioButton x:Name="rbsearchfiltro" Content="FILTRADO" Canvas.Left="115" Canvas.Top="89" Foreground="White" Checked="rbsearchfiltro_Checked" FontSize="18"/>
+            </Canvas>
+            <DataGrid MouseDoubleClick="dgviewfile_MouseDoubleClick" IsReadOnly="True" x:Name="dgviewfile" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserReorderColumns="True" CanUserResizeColumns="False" CanUserSortColumns="True" HorizontalGridLinesBrush="#FF035952" VerticalGridLinesBrush="#FF035952" HeadersVisibility="Column" SelectionUnit="Cell" SelectionMode="Single" BorderBrush="#FF035952" Width="815" Canvas.Left="255" Canvas.Top="72" Height="634" SelectionChanged="dgviewfile_SelectionChanged">
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}" >
+                        <Setter Property="Background" Value="#FF035952" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderBrush" Value="#FF065953"/>
+                        <Setter Property="BorderThickness" Value="1 1 1 1"/>
+                        <Setter Property="Margin" Value="-1,-1,0,0" />
+                        <Setter Property="Height" Value="28" />
+                        <Setter Property="Width" Value="auto"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        <Setter Property="FontWeight" Value="Light"/>
+                        <Setter Property="FontSize" Value="12"/>
+                    </Style>
+                </DataGrid.Resources>
+            </DataGrid>
+            <ListBox x:Name="lsidvisita" Height="142" Width="234" Canvas.Left="10" Canvas.Top="463" SelectionChanged="lsidvisita_SelectionChanged" FontSize="18"/>
+            <Canvas x:Name="cdvisitafiltro" Height="624" Canvas.Left="255" Canvas.Top="61" Width="825">
+
+
+                <Label Content="ID VISITA:" Canvas.Left="13" Canvas.Top="16" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="94" FontStyle="Normal" FontSize="16"/>
+                <Label x:Name="lbidvisita" Content="" Canvas.Left="102" Canvas.Top="16" Foreground="#FF2D2D30" FontWeight="Normal" Height="34" Width="159" FontStyle="Normal" FontSize="16"/>
+                <Label Content="ESTADO:" Canvas.Left="268" Canvas.Top="16" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="94" FontStyle="Normal" FontSize="16"/>
+                <Label x:Name="lbestado" Content="" Canvas.Left="356" Canvas.Top="16" Foreground="#FF2D2D30" FontWeight="Normal" Height="34" Width="160" FontStyle="Normal" FontSize="16"/>
+                <Label Content="SUPERVISOR:" Canvas.Left="520" Canvas.Top="16" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="117" FontStyle="Normal" FontSize="16"/>
+                <Label x:Name="lbsupervisor" Content="" Canvas.Left="642" Canvas.Top="16" Foreground="#FF2D2D30" FontWeight="Normal" Height="34" Width="160" FontStyle="Normal" FontSize="16"/>
+                <Label Content="CLIENTE:" Canvas.Left="13" Canvas.Top="69" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="94" FontStyle="Normal" FontSize="16"/>
+                <Label x:Name="lbnamecliente" Content="" Canvas.Left="115" Canvas.Top="69" Foreground="#FF2D2D30" FontWeight="Normal" Height="34" Width="400" FontStyle="Normal" FontSize="16"/>
+                <Label Content="TEL CLIENTE:" Canvas.Left="520" Canvas.Top="69" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="117" FontStyle="Normal" FontSize="16"/>
+                <Label x:Name="lbtelcliente" Content="" Canvas.Left="642" Canvas.Top="69" Foreground="#FF2D2D30" FontWeight="Normal" Height="34" Width="170" FontStyle="Normal" FontSize="16"/>
+                <Label Content="DIRECCIÓN:" Canvas.Left="13" Canvas.Top="125" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="113" FontStyle="Normal" FontSize="16"/>
+                <Label x:Name="lbdireccion" Content="" Canvas.Left="131" Canvas.Top="125" Foreground="#FF2D2D30" FontWeight="Normal" Height="34" Width="384" FontStyle="Normal" FontSize="16"/>
+                <Label Content="FECHA AGENDA:" Canvas.Left="520" Canvas.Top="125" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="147" FontStyle="Normal" FontSize="16"/>
+                <Label x:Name="lbfecha" Content="" Canvas.Left="672" Canvas.Top="125" Foreground="#FF2D2D30" FontWeight="Normal" Height="34" Width="140" FontStyle="Normal" FontSize="16"/>
+                <Label Content="TÉCNICO:" Canvas.Left="13" Canvas.Top="181" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="113" FontStyle="Normal" FontSize="16"/>
+                <Label x:Name="lbtecnico" Content="" Canvas.Left="131" Canvas.Top="181" Foreground="#FF2D2D30" FontWeight="Normal" Height="34" Width="384" FontStyle="Normal" FontSize="16"/>
+                <Label Content="FRANJA:" Canvas.Left="520" Canvas.Top="181" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="91" FontStyle="Normal" FontSize="16"/>
+                <Label x:Name="lbfranja" Content="" Canvas.Left="616" Canvas.Top="181" Foreground="#FF2D2D30" FontWeight="Normal" Height="34" Width="196" FontStyle="Normal" FontSize="16"/>
+                <Image x:Name="imgevento" Height="200" Canvas.Left="139" Canvas.Top="420" Width="200"/>
+                <Label Content="FOTO EVENTO" Canvas.Left="172" Canvas.Top="371" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="130" HorizontalContentAlignment="Center" FontStyle="Normal" FontSize="16"/>
+                <Image x:Name="imgplaca" Height="200" Canvas.Left="403" Canvas.Top="420" Width="200"/>
+                <Label Content="FOTO PREDIO" Canvas.Left="436" Canvas.Top="371" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="130" HorizontalContentAlignment="Center" FontStyle="Normal" FontSize="16"/>
+                <Label Content="NOTAS LLAMADA:" Canvas.Left="13" Canvas.Top="220" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="169" FontStyle="Normal" FontSize="16"/>
+                <Label Content="NOTAS CIERRE:" Canvas.Left="432" Canvas.Top="220" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="147" FontStyle="Normal" FontSize="16"/>
+                <Label Content="NOTAS LLAMADA:" Canvas.Left="13" Canvas.Top="220" Foreground="#FF033D38" FontWeight="Bold" Height="34" Width="169" FontStyle="Normal" FontSize="16"/>
+                <TextBox x:Name="txtnotasllamada" IsEnabled="True" Canvas.Left="21" Canvas.Top="254" TextWrapping="Wrap" Height="105" Width="294" Background="#FFEAEAEA" FontStyle="Normal" FontSize="16"/>
+                <TextBox x:Name="txtnotascierre" IsEnabled="True" Canvas.Left="436" Canvas.Top="255" TextWrapping="Wrap" Height="105" Width="350" Background="#FFEAEAEA" FontStyle="Normal" FontSize="16"/>
+
+
+            </Canvas>
+            <DatePicker x:Name="pickfecha" Canvas.Left="7" Canvas.Top="364" Width="243" Height="40" BorderBrush="{x:Null}" FontSize="18"/>
+        </Canvas>
+        <Border x:Name="footer" Background="#FF033D38" Height="74"  Width="1080">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" RenderingBias="Quality" Color="#FF035952" ShadowDepth="5" Direction="5" />
+            </Border.Effect>
+            <Canvas>
+                <Button x:Name="btnhome"  BorderBrush="{x:Null}" Cursor="Hand" Height="70" Width="99">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/iconhome.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnsalir"  BorderBrush="{x:Null}" Cursor="Hand" Height="70" Width="99" Canvas.Left="981" Canvas.Top="2" Click="btnsalir_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/RecursosIMG/iconsalir.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnhome_Copy"  BorderBrush="{x:Null}" Cursor="Hand" Height="70" Width="99" Canvas.Left="441" Canvas.Top="2" Click="btnhome_Copy_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/CALIDAD/iconcalendar.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnhome_Copy1"  BorderBrush="{x:Null}" Cursor="Hand" Height="70" Width="99" Canvas.Left="528" Canvas.Top="2" Click="btnhome_Copy1_Click_1">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/CALIDAD/iconcall.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+            </Canvas>
+        </Border>
+    </Canvas>
+</Window>

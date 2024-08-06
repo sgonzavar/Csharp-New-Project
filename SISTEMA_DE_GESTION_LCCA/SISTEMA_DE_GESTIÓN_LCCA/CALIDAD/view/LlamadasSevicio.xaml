@@ -1,0 +1,159 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SISTEMA_DE_GESTIÓN_LCCA.CALIDAD"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="SISTEMA_DE_GESTIÓN_LCCA.CALIDAD.LlamadasSevicio"
+        mc:Ignorable="d"
+        Title="LlamadasSevicio" Height="722" Width="1080" FontSize="17" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Canvas>
+        <Border x:Name="footer" Background="#FF033D38" Height="74"  Width="1080" Canvas.Top="-1">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" RenderingBias="Quality" Color="#FF035952" ShadowDepth="5" Direction="5" />
+            </Border.Effect>
+            <Canvas>
+                <Button x:Name="btnhome" Click="btnhome_Click" BorderBrush="{x:Null}" Cursor="Hand" Height="70" Width="99">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/iconhome.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnsalir" Click="btnsalir_Click" BorderBrush="{x:Null}" Cursor="Hand" Height="70" Width="99" Canvas.Left="981" Canvas.Top="2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/RecursosIMG/iconsalir.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btncalendar" Click="Button_Click_1" BorderBrush="{x:Null}" Cursor="Hand" Height="70" Width="100" Canvas.Left="439" Canvas.Top="2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/CALIDAD/iconcalendar.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btncall" Click="btncall_Click_1"  BorderBrush="{x:Null}" Cursor="Hand" Height="70" Width="100" Canvas.Left="553">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/CALIDAD/iconcall.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+            </Canvas>
+        </Border>
+        <Canvas x:Name="CLIENTE" Height="649" Canvas.Left="4" Width="512" Canvas.Top="65">
+            <Label Content="ID ORDEN:" Canvas.Left="3" Canvas.Top="57" FontWeight="Bold"/>
+            <TextBox x:Name="txtidorden" Canvas.Left="175" Canvas.Top="62" TextWrapping="Wrap" Width="257" RenderTransformOrigin="0.496,0.494" IsUndoEnabled="False" TabIndex="1" TextChanged="txtidorden_TextChanged"/>
+            <Label Content="NOMBRE CLIENTE:" Canvas.Left="4" Canvas.Top="150"/>
+            <TextBox x:Name="txtcuenta" Canvas.Left="175" Canvas.Top="106" TextWrapping="Wrap" Width="257" RenderTransformOrigin="0.334,0.221" TabIndex="2" TextChanged="txtcuenta_TextChanged"/>
+            <TextBox x:Name="txtnamecliente" Canvas.Left="176" Canvas.Top="153" TextWrapping="Wrap" Width="256" RenderTransformOrigin="0.334,0.221" TabIndex="3"/>
+            <Label Content="# CONTACTO" Canvas.Left="4" Canvas.Top="192"/>
+            <TextBox  PreviewKeyDown="txtcontacto_PreviewKeyDown" x:Name="txtcontacto" Canvas.Left="176" Canvas.Top="197" TextWrapping="Wrap" Width="312" RenderTransformOrigin="0.497,0.577" TabIndex="4" TextChanged="txtcontacto_TextChanged"/>
+            <Label Content="DIRECCIÓN:" Canvas.Left="4" Canvas.Top="244"/>
+            <TextBox x:Name="txtdireccion" Canvas.Left="176" Canvas.Top="232" TextWrapping="Wrap" Width="312" RenderTransformOrigin="0.334,0.221" TabIndex="5" Height="52"/>
+            <ComboBox SelectionChanged="cbxtecnico_Copy_SelectionChanged_1" IsKeyboardFocusedChanged="cbxtecnico_Copy_IsKeyboardFocusedChanged" IsTextSearchEnabled="True" IsEditable="True" IsTextSearchCaseSensitive="True" x:Name="cbxtecnico_Copy" Canvas.Left="175" Canvas.Top="294" Width="315"/>
+            <Label Content="FECHA EVENTO:" Canvas.Left="4" Canvas.Top="339"/>
+            <DatePicker x:Name="pickfechaevento" Canvas.Left="176" Canvas.Top="342" Width="310" SelectedDateFormat="Short" TabIndex="6"/>
+            <TextBox  x:Name="txtactividad" Canvas.Left="176" Canvas.Top="392" TextWrapping="Wrap" Width="312" RenderTransformOrigin="0.334,0.221" TabIndex="7"/>
+            <Label Content="CANT. LLAMADAS:" Canvas.Left="4" Canvas.Top="432"/>
+            <TextBox x:Name="txtvezllamada" Canvas.Left="177" Canvas.Top="436" TextWrapping="Wrap" Width="35" RenderTransformOrigin="0.436,0.636" TextChanged="txtvezllamada_TextChanged" TabIndex="8" IsEnabled="False"/>
+            <Label Content="NOTAS:" Canvas.Left="4" Canvas.Top="477"/>
+            <TextBox x:Name="txtnotasllamada" IsEnabled="True" Canvas.Left="176" Canvas.Top="477" TextWrapping="Wrap" Height="128" Width="309" Background="#FFEAEAEA"/>
+            <RadioButton x:Name="rdyes" Content="SI" Canvas.Left="191" Canvas.Top="616" Width="42" Checked="rdyes_Checked"/>
+            <RadioButton x:Name="rdno" Content="NO" Canvas.Left="245" Canvas.Top="616" Width="59" Checked="RadioButton_Checked"/>
+            <Label Content="CUENTA:" Canvas.Left="3" Canvas.Top="101"/>
+            <Label Content="CLIENTE:" Canvas.Left="8" Canvas.Top="18" FontSize="24" Foreground="#FF033D38" FontWeight="Bold"/>
+            <Button x:Name="searchidorden" Height="33" Canvas.Left="434" Canvas.Top="57" Width="56"  RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Cursor="Hand" Click="searchidorden_Click">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="/CALIDAD/iconsearch.png" Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            <Label Content="¿REQUIERE GARANTIA?" Canvas.Left="4" Canvas.Top="610"/>
+            <Label Content="TIPO DE ACTIVIDAD:" Canvas.Left="4" Canvas.Top="387"/>
+            <Label Content="TIPO LLAMADA:" Canvas.Left="220" Canvas.Top="432"/>
+            <ComboBox x:Name="cbxtipollamada" Canvas.Left="355" Canvas.Top="436" Width="134" RenderTransformOrigin="0.5,0.5">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.284"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+                <ComboBoxItem Content="SALIENTE"/>
+                <ComboBoxItem Content="ENTRANTE"/>
+                <ComboBoxItem Content="SIN CONTESTAR"/>
+            </ComboBox>
+            <Label Content="TÉCNICO:" Canvas.Left="6" Canvas.Top="293"/>
+            <Label x:Name="lb_id_" Content="ID LLAMADA:" Canvas.Left="254" Canvas.Top="22" FontSize="18" Foreground="#FF033D38" FontWeight="Bold" Width="229"/>
+        </Canvas>
+        <Separator Canvas.Left="198" Canvas.Top="376" Height="43" RenderTransformOrigin="0.5,0.5" Width="687" Background="#FF033D38">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <Canvas x:Name="VISITA" Height="654" Width="559" Canvas.Left="545" Canvas.Top="65">
+            <ComboBox IsKeyboardFocusedChanged="cbxsupervisores_IsMouseDirectlyOverChanged" IsTextSearchEnabled="True" IsEditable="True" IsTextSearchCaseSensitive="True" x:Name="cbxsupervisores" Canvas.Left="191" Canvas.Top="75" Width="332" SelectionChanged="cbxsupervisores_SelectionChanged"/>
+            <ComboBox SelectionChanged="cbxtecnico_Copy_SelectionChanged" IsKeyboardFocusedChanged="cbxtecnico_IsKeyboardFocusedChanged" IsTextSearchEnabled="True" IsEditable="True" IsTextSearchCaseSensitive="True" x:Name="cbxtecnico" Canvas.Left="191" Canvas.Top="126" Width="332"/>
+            <TextBox PreviewKeyDown="txtcontacto_PreviewKeyDown" x:Name="txthora" Canvas.Left="195" Canvas.Top="176" TextWrapping="Wrap" Width="77" RenderTransformOrigin="0.334,0.221"/>
+            <TextBox PreviewKeyDown="txtcontacto_PreviewKeyDown" x:Name="txtminutos" Canvas.Left="298" Canvas.Top="176" TextWrapping="Wrap" Width="72" RenderTransformOrigin="0.334,0.221"/>
+            <ComboBox x:Name="cbxfranja" Canvas.Left="396" Canvas.Top="175" Width="127">
+                <ComboBoxItem Content="A.M."/>
+                <ComboBoxItem Content="P.M."/>
+            </ComboBox>
+            <DatePicker x:Name="pickfechavisita" Canvas.Left="189" Canvas.Top="222" Width="332" SelectedDateFormat="Short"/>
+            <ComboBox x:Name="cbxfranjavisitainicial" Canvas.Left="189" Canvas.Top="273" Width="146" SelectionChanged="cbxfranjavisitainicial_SelectionChanged">
+                <ComboBoxItem Content="7:00 AM"/>
+                <ComboBoxItem Content="8:00 AM"/>
+                <ComboBoxItem Content="9:00 AM"/>
+                <ComboBoxItem Content="10:00 AM"/>
+                <ComboBoxItem Content="11:00 AM"/>
+                <ComboBoxItem Content="12:00 M"/>
+                <ComboBoxItem Content="1:00 PM"/>
+                <ComboBoxItem Content="2:00 PM"/>
+                <ComboBoxItem Content="3:00 PM"/>
+                <ComboBoxItem Content="4:00 PM"/>
+                <ComboBoxItem Content="5:00 PM"/>
+                <ComboBoxItem Content="6:00 PM"/>
+                <ComboBoxItem Content="7:00 PM"/>
+                <ComboBoxItem Content="8:00 PM"/>
+            </ComboBox>
+            <ComboBox x:Name="cbxfranjavisitafinal" Width="127" Canvas.Left="396" Canvas.Top="273" IsEnabled="False">
+                <ComboBoxItem Content="7:00 AM"/>
+                <ComboBoxItem Content="8:00 AM"/>
+                <ComboBoxItem Content="9:00 AM"/>
+                <ComboBoxItem Content="10:00 AM"/>
+                <ComboBoxItem Content="11:00 AM"/>
+                <ComboBoxItem Content="12:00 M"/>
+                <ComboBoxItem Content="1:00 PM"/>
+                <ComboBoxItem Content="2:00 PM"/>
+                <ComboBoxItem Content="3:00 PM"/>
+                <ComboBoxItem Content="4:00 PM"/>
+                <ComboBoxItem Content="5:00 PM"/>
+                <ComboBoxItem Content="6:00 PM"/>
+                <ComboBoxItem Content="7:00 PM"/>
+                <ComboBoxItem Content="8:00 PM"/>
+                <ComboBoxItem Content="9:00 PM"/>
+                <ComboBoxItem Content="9:00 PM"/>
+            </ComboBox>
+            <TextBox x:Name="txtnotasvisita" Canvas.Left="187" Canvas.Top="357" TextWrapping="Wrap" Height="178" Width="334" Background="#FFEAEAEA"/>
+            <Label x:Name="lbagenda" Content="AGENDAMIENTO VISITA" FontSize="24" Foreground="#FF033D38" FontWeight="Bold" Canvas.Left="8" Canvas.Top="15" Width="539"/>
+            <Label Content="SUPERVISOR:" Canvas.Left="13" Canvas.Top="73"/>
+            <Label Content="HORA NOTIFICACION:" Canvas.Left="14" Canvas.Top="173"/>
+            <Label Content="FECHA VISITA:" Canvas.Left="14" Canvas.Top="220"/>
+            <Label Content="FRANJA HORARIA:" Canvas.Left="14" Canvas.Top="271"/>
+            <Label Content="NOTAS PARA VISITA:" Canvas.Left="13" Canvas.Top="355"/>
+            <Label Content="TÉCNICO:" Canvas.Left="13" Canvas.Top="125"/>
+            <Label Content=":" Canvas.Left="276" Canvas.Top="171" RenderTransformOrigin="0.641,0.409" Width="15"/>
+            <Label Content="a" Canvas.Left="357" Canvas.Top="268"/>
+        </Canvas>
+        <Button x:Name="btnok" Content="GUARDAR" Canvas.Left="886" Canvas.Top="632" Width="157" Cursor="Hand" BorderBrush="{x:Null}" Background="#FF033D38" Foreground="White" Height="50" Click="btnok_Click"/>
+    </Canvas>
+</Window>

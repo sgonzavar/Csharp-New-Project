@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ApiWeb.Models.tbl_order>
+
+@{
+    ViewBag.Title = "Planning";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List Planning</h2>
+
+<p>
+    @Html.ActionLink("Create New", "add")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.request)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.typeVehicle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.quantity)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.day)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.request)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.typeVehicle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "edit", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id }, new { @class = "checkDelete" })
+        </td>
+    </tr>
+}
+
+</table>
+
+@section scripts{
+
+        <script>
+            $(".checkDelete").click(function (event) {
+                if (!confirm('Are you Sure....? ')) {
+                    event.preventDefault();
+                }
+            });
+        </script>
+    
+}

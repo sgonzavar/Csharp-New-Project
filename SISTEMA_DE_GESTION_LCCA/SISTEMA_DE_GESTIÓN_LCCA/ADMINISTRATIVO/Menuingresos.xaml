@@ -1,0 +1,68 @@
+﻿<Window x:Class="SISTEMA_DE_GESTIÓN_LCCA.ADMINISTRATIVO.Menuingresos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SISTEMA_DE_GESTIÓN_LCCA.ADMINISTRATIVO"
+        mc:Ignorable="d" Title="INGRESOS"
+           WindowStyle="None" FontSize="18"  WindowStartupLocation="CenterScreen" RenderTransformOrigin="0.5,0.5" ResizeMode="NoResize" Width="817" Height="248">
+    <Canvas>
+        <Label Content="SELECCIONE MODULO" Width="819" Height="61" Foreground="White" FontSize="22" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="#FF033C36"/>
+        <DockPanel LastChildFill="False" Height="196" Canvas.Top="54" Width="819" Background="#FF0D5953">
+            <Grid DockPanel.Dock="Top" Height="198">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="82*"/>
+                    <ColumnDefinition Width="73*"/>
+                    <ColumnDefinition Width="9*"/>
+                    <ColumnDefinition Width="82*"/>
+                    <ColumnDefinition Width="82*"/>
+                    <ColumnDefinition Width="82*"/>
+                </Grid.ColumnDefinitions>
+                <Button Click="btnexcelenciamod_Click"  x:Name="btnexcelenciamod" Margin="10,10,10,10" Cursor="Hand" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/ADMINISTRATIVO/formacion.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="btnmetasmod_Click" x:Name="btnmetasmod" Margin="10,10,10,10" Grid.Column="1" Cursor="Hand" BorderBrush="{x:Null}" Grid.ColumnSpan="2">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/ADMINISTRATIVO/alt.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="btncall_Click"  x:Name="btncall" Margin="10,10,10,10" Grid.Column="3" Cursor="Hand" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/ADMINISTRATIVO/entrega.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+
+                <Button Click="btn_Click"  x:Name="btn" Margin="10,10,10,10" Grid.Column="4" Cursor="Hand" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/ADMINISTRATIVO/inop.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button Click="btnop_Click"  x:Name="btnop" Margin="10,10,10,10" Grid.Column="5" Cursor="Hand" BorderBrush="{x:Null}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/ADMINISTRATIVO/colab.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+
+
+            </Grid>
+        </DockPanel>
+        <Button Click="Button_Click_1" Height="52" Canvas.Left="747" Width="62" BorderBrush="{x:Null}" Cursor="Hand" Canvas.Top="2">
+            <Button.Background>
+                <ImageBrush ImageSource="/RecursosIMG/iconsalir.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnupdate" Click="btnupdate_Click" Height="54" Canvas.Left="10" Width="62" BorderBrush="{x:Null}" Cursor="Hand" Canvas.Top="-1">
+            <Button.Background>
+                <ImageBrush ImageSource="/RecursosIMG/icondatacarga.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnmotos" Click="btnmotos_Click" Height="54" Canvas.Left="77" Width="62" BorderBrush="{x:Null}" Cursor="Hand">
+            <Button.Background>
+                <ImageBrush ImageSource="/ADMINISTRATIVO/iconcobromoto.png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+
+    </Canvas>
+</Window>

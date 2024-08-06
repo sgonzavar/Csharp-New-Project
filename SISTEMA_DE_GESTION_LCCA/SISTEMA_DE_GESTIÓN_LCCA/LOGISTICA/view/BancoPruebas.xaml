@@ -1,0 +1,107 @@
+﻿<Window x:Class="SISTEMA_DE_GESTIÓN_LCCA.LOGISTICA.BancoPruebas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SISTEMA_DE_GESTIÓN_LCCA.LOGISTICA"
+         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        mc:Ignorable="d"
+         Title="LCCA - BANCO DE PRUEBAS" Height="722" Width="1080" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="Manual" TabIndex="0" WindowState="Normal">
+    <Canvas>
+        <DockPanel x:Name="header" Height="66" LastChildFill="False" Width="1080" Background="#FF033D38">
+            <Canvas Width="1077">
+                <Button x:Name="btnhome"  Content="" RenderTransformOrigin="0.5,0.5" Cursor="Hand" BorderBrush="{x:Null}" Width="89" Height="66" Canvas.Left="187" Click="btnhome_Click" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Button.Background>
+                        <ImageBrush Stretch="UniformToFill" ImageSource="/iconhome.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="btnloanddata" Cursor="Hand" BorderBrush="{x:Null}" Width="95" Height="66" Canvas.Left="982" Click="btnloanddata_Click">
+                    <Button.Background>
+                        <ImageBrush x:Name="imgbtnlda" ImageSource="/RecursosIMG/iconsalir.png" Stretch="UniformToFill"/>
+                    </Button.Background>
+                </Button>
+                <Label Content="LCCA - BANCO DE PRUEBAS" Canvas.Left="1" Foreground="White" Height="66" Width="175" HorizontalContentAlignment="Right" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                <Button x:Name="btnexportar"  Content="" RenderTransformOrigin="0.5,0.5" Cursor="Hand" BorderBrush="{x:Null}" Width="80" Height="60" Canvas.Left="598" Click="btnexportar_Click" Canvas.Top="2">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                    <Button.Background>
+                        <ImageBrush Stretch="UniformToFill" ImageSource="/LOGISTICA/iconexcel.png"/>
+                    </Button.Background>
+                </Button>
+            </Canvas>
+        </DockPanel>
+        <DockPanel x:Name="lateralingreso" LastChildFill="False" Width="323" Canvas.Top="66" Background="#FF035952" Height="658">
+            <Image Source="/LogISTICA/logo.png" DockPanel.Dock="Top" Height="150" Margin="0,0,0,20" Width="283"/>
+            <RadioButton x:Name="rdpruebasok" Content="PRUEBAS OK" DockPanel.Dock="Top" FontSize="20" Foreground="White" Height="36" Width="263" Checked="rdpruebasok_Checked"/>
+            <RadioButton x:Name="rdnoengancha" Content="NO ENGANCHA" DockPanel.Dock="Top" FontSize="20" Foreground="White" Height="36" Width="263" Checked="rdnoengancha_Checked"/>
+            <RadioButton x:Name="rdhdmisulfa" Content="HDMI SULFATADO" DockPanel.Dock="Top" FontSize="20" Foreground="White" Height="36" Width="262" Checked="rdhdmisulfa_Checked"/>
+            <RadioButton x:Name="rdnoenciende" Content="NO ENCIENDE" DockPanel.Dock="Top" FontSize="20" Foreground="White" Height="36" Width="264" Checked="rdnoenciende_Checked"/>
+            <RadioButton x:Name="rdotro" Content="OTRO" DockPanel.Dock="Top" FontSize="20" Foreground="White" Height="36" Width="264" Checked="rdotro_Checked"/>
+            <Label Content="SERIAL:" DockPanel.Dock="Top" Background="{x:Null}" Foreground="White" FontWeight="Bold" FontSize="16" HorizontalContentAlignment="Center" Height="36"/>
+            <TextBox x:Name="txtserial" TextWrapping="Wrap" DockPanel.Dock="Top" Foreground="#FFF0F0F0" Background="#FF379F96" FontSize="16" BorderBrush="{x:Null}" SelectionBrush="White" Height="28" Width="293"/>
+            <Canvas DockPanel.Dock="Top" Height="33"/>
+            <Button IsDefault="True" x:Name="btnbuscar" Content="REGISTRAR REVISIÓN" Background="#FF033D38" BorderBrush="{x:Null}" FontWeight="Bold" Foreground="White" FontSize="16" Cursor="Hand" Click="btnbuscar_Click" DockPanel.Dock="Top" Height="44" Width="236"/>
+
+
+        </DockPanel>
+        <Canvas x:Name="charts" Height="656" Width="747" Canvas.Left="323" Canvas.Top="66">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <lvc:PieChart Name="Chart" Grid.Row="1" Series="{Binding SeriesCollection}" 
+                      LegendLocation="Right" InnerRadius="50" Margin="8,29,-379,-335">
+                    <lvc:PieChart.ChartLegend>
+                        <lvc:DefaultLegend BulletSize="20"></lvc:DefaultLegend>
+                    </lvc:PieChart.ChartLegend>
+                    <lvc:PieChart.DataTooltip>
+                        <lvc:DefaultTooltip BulletSize="20"></lvc:DefaultTooltip>
+                    </lvc:PieChart.DataTooltip>
+                </lvc:PieChart>
+                <lvc:PieChart x:Name="Chart_Copy" Grid.Row="1" Series="{Binding SeriesCollection2}" 
+                    LegendLocation="Right" InnerRadius="50" Margin="379,29,-750,-335">
+                    <lvc:PieChart.ChartLegend>
+                        <lvc:DefaultLegend BulletSize="20"/>
+                    </lvc:PieChart.ChartLegend>
+                    <lvc:PieChart.DataTooltip>
+                        <lvc:DefaultTooltip BulletSize="20"/>
+                    </lvc:PieChart.DataTooltip>
+                </lvc:PieChart>
+            </Grid>
+            <Label Content="GRAFICA DEL DÍA" Canvas.Left="79" Canvas.Top="8" FontWeight="Bold" Foreground="#FF033D38" FontSize="18"/>
+            <Label Content="GARANTÍAS POR LOTE" Canvas.Left="422" Canvas.Top="8" FontWeight="Bold" Foreground="#FF033D38" FontSize="18"/>
+            <ListBox x:Name="lsdescripcion" Height="284" Width="315" Canvas.Top="366" SelectionChanged="lsdescripcion_SelectionChanged" Canvas.Left="10"/>
+            <Label Content="LISTADO MODELOS" Canvas.Left="80" Canvas.Top="332" FontWeight="Bold" Foreground="#FF033D38" FontSize="18"/>
+            <lvc:PieChart x:Name="chartmodelos" Series="{Binding SeriesCollection2}" 
+            LegendLocation="Right" InnerRadius="50" Height="306" Canvas.Left="375" Canvas.Top="344" Width="372">
+                <lvc:PieChart.ChartLegend>
+                    <lvc:DefaultLegend BulletSize="20"/>
+                </lvc:PieChart.ChartLegend>
+                <lvc:PieChart.DataTooltip>
+                    <lvc:DefaultTooltip BulletSize="20"/>
+                </lvc:PieChart.DataTooltip>
+            </lvc:PieChart>
+
+        </Canvas>
+        <Canvas x:Name="progress" Height="722" Width="1080" d:IsHidden="True">
+            <ProgressBar Minimum="0" Maximum="100" IsIndeterminate="True" x:Name="barraprogress" Height="44" Canvas.Left="585" Canvas.Top="339" Width="262"/>
+            <Label Content="Exportando informe, por favor espere..." Canvas.Left="535" Canvas.Top="300" Foreground="#FF033D38" FontWeight="Bold" FontSize="18"/>
+        </Canvas>
+    </Canvas>
+</Window>
